@@ -117,32 +117,3 @@ public class test  {//extends MyAbs implements MyInterface{
    
 }
 
-final class Student{
-    private final String name; 
-    private final Employee employee;
-    private final List<Employee> lstData;
-    /*private Student(){
-        
-         * Multiple markers at this line
-            - The blank final field lstData may not have been initialized
-            - The blank final field name may not have been initialized
-            - The blank final field employee may not have been initialized
-         
-    }*/
-    public Student(String name, Employee employee){
-        this.name=name;
-        this.employee=employee;
-        this.lstData=new ArrayList<Employee>();
-    }
-    
-    public String getName() {
-        return name;
-    }
-    public Employee getEmployee() {
-        return employee;
-    }
-
-    public List<Employee> getLstData() {
-        return Collections.unmodifiableList(lstData);// throw exception if try to modify : java.lang.UnsupportedOperationException
-    }
-}
