@@ -77,7 +77,7 @@ class Employee implements Comparable{
      */
 }
  
-public class test  {//extends MyAbs implements MyInterface{ 
+public class MyTest  {//extends MyAbs implements MyInterface{ 
 	public static void main(String[] args) { 
 	    /*Integer a = 1000, b = 1000;  
 	    System.out.println(a == b); // false  

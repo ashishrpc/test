@@ -31,7 +31,7 @@ abstract class MyAbs implements MyInterface{
         return 0;
     }
 }
-class Employee implements Comparable{
+class Employee implements Comparable,Cloneable{
     private String name;
     private int age;
     static int count =0;
@@ -39,6 +39,9 @@ class Employee implements Comparable{
 //        if(count++==2){
 //            throw new Exception("Object reach max...");
 //        }
+    }
+    public Object clone() throws CloneNotSupportedException{
+    	return super.clone();
     }
     public Employee(String str)throws Exception{  
         //this(); 
@@ -76,7 +79,7 @@ public class MyImmutable  {//extends MyAbs implements MyInterface{
    
 }
 
-final class Student{
+final class Student{//Student class is immutable
     private final String name; 
     private final Employee employee;
     private final List<Employee> lstData;
@@ -97,8 +100,8 @@ final class Student{
     public String getName() {
         return name;
     }
-    public Employee getEmployee() {
-        return employee;
+    public Employee getEmployee() throws CloneNotSupportedException{
+        return (Employee)employee.clone();//it should return colon / copy of this object. No one can change the state of this object
     }
 
     public List<Employee> getLstData() {
