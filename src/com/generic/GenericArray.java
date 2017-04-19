@@ -18,16 +18,19 @@ public class GenericArray {
 		List<String> lstStr=gn.magicalListGetter();
 		lstStr.add("aaa");
 		System.out.println(lstStr);
+		
+		Integer[] iarr=new GanArr<Integer>().getInfoArr(Integer.class);
+		String[] strArr=new GanArr<String>().getInfoArr(String.class);
 	}
 
 }
 class GanArr<T> implements GanArrInter{
-	public T[] getInfoArr(Class<T> tClass){
+	public T[] getInfoArr(Class<T> tClass){//create generic type array
 		//return (T)tClass.newInstance();
 		T[] myArray=((T[]) Array.newInstance(tClass, 10));
 		return myArray;
 	}
-	public List<T> magicalListGetter() {
+	public List<T> magicalListGetter() {//create generic type arrayList
 	    return new ArrayList<T>();
 	}
 	
