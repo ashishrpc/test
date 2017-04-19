@@ -33,7 +33,7 @@ public class StaticBlock {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//Test test=new Test();
-		//StatBlock sb=new StatBlock();
+		StatBlock sb=new StatBlock();
 		try{
 		Class.forName("com.StatBlock");
 		}catch(Exception e){}
