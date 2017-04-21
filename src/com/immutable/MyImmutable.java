@@ -91,9 +91,9 @@ final class Student{//Student class is immutable
             - The blank final field employee may not have been initialized
          
     }*/
-    public Student(String name, Employee employee){
+    public Student(String name, Employee employee)throws CloneNotSupportedException{
         this.name=name;
-        this.employee=employee;
+        this.employee=(Employee)employee.clone();//may be change from outside get it as clone
         this.lstData=new ArrayList<Employee>();
     }
     
