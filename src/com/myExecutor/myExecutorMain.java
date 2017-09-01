@@ -10,6 +10,18 @@ public class myExecutorMain {
     /**
      * @param args
      */
+	/*
+	 The Executor framework helps to decouple a command submission from command execution.
+
+In the java.util.concurrent package there are three interfaces:
+
+Executor — Used to submit a new task.
+
+ExecutorService — A subinterface of Executor that adds methods to manage lifecycle of threads used to run the submitted tasks and methods to produce a Future to get a result from an asynchronous computation.
+
+ScheduledExecutorService — A subinterface of ExecutorService, to execute commands periodically or after a given delay.
+ 
+	 */
     public static void main(String[] args) {
         // TODO Auto-generated method stub
         try {
