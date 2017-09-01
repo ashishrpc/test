@@ -1,4 +1,6 @@
 package com;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.lang.reflect.*;
         
    public class StaticValue {
@@ -9,10 +11,10 @@ import java.lang.reflect.*;
       public static void main(String args[])
       {
          try {
-            Class cls = Class.forName("StaticValue"); 
+            Class cls = Class.forName("com.StaticValue"); 
             Field fld = cls.getField("i");
             System.out.println("value : "+fld.get(fld.getName()));
-            //System.out.println("value : "+fld.get("i"));
+            System.out.println("value : "+fld.get("i"));
             
             /*for (int i  = 0; i < fieldlist.length; i++) {
                Field fld = fieldlist[i];
@@ -41,4 +43,16 @@ import java.lang.reflect.*;
               System.err.println(e);
            }*/
        }
+   }
+   //overwrriding rules of access modifier, return type and throws checked-exception
+   class A{
+	   protected Object fun()throws IOException {
+		   return null;
+	   }
+   }
+   class B extends A{
+	   @Override
+	   public StaticBlock  fun()throws FileNotFoundException{
+		   return null;
+	   }
    }
