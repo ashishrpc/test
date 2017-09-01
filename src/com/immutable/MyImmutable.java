@@ -22,6 +22,28 @@ import com.myInterface.Cow;
 import com.myInterface.Tiger;
 import java.lang.instrument.Instrumentation;
 import java.lang.reflect.Array;
+
+/*
+ Keep the following aspects in mind for creating your own immutable objects:
+Make the fields final and initialize them in the constructor. For primitive types, the field values are final, there is no possibility of changing the state after it is initialized. For reference types, you cannot change the reference.
+For reference types that are mutable, you need to take of some more aspects to ensure immutability. Why? Even if you make the mutable reference type final it is possible that the members may refer to objects created outside the class or may be referred by others. In this case:
+Make sure that the methods don’t change the contents inside those mutable objects.
+Don’t share the references outside the classes — for example, as a return value from methods in that class. If the references to fields that are mutable are accessible from code outside the class, they can end up modifying the contents of the object.
+If you must return a reference, return the deep copy of the object (so that the original contents remain intact even if the contents inside the returned object is changed).
+Provide only accessor methods (i.e., getter methods) but don’t provide mutator methods (i.e., setter methods)
+In case changes must be made to the contents of the object, create a new immutable object with the necessary changes and return to that reference.
+Declare the class final. Why? If the class is inheritable, methods in its derived class can override them and modify the fields.
+=====================OR====================
+
+Declare the class as final so it can’t be extended.
+Make all fields private so that direct access is not allowed.
+Don’t provide setter methods for variables
+Make all mutable fields final so that it’s value can be assigned only once.
+Initialize all the fields via a constructor performing deep copy.
+Perform cloning of objects in the getter methods to return a copy rather than returning the actual object reference 
+ 
+ * 
+ */
 //Observer design pattern : maintain state check on object.
 interface MyInterface{
     public int sum();
@@ -71,6 +93,7 @@ class Employee implements Comparable,Cloneable{
     } 
 }
  
+
 public class MyImmutable  {//extends MyAbs implements MyInterface{ 
 	public static void main(String[] args) { 
 
