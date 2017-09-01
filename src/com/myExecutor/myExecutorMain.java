@@ -1,4 +1,4 @@
-package myExecutor;
+package com.myExecutor;
 
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
