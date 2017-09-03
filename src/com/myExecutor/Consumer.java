@@ -1,4 +1,4 @@
-package myExecutor;
+package com.myExecutor;
 
 import java.util.Collection;
 import java.util.concurrent.Callable;

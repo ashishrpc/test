@@ -1,4 +1,4 @@
-package myExecutor;
+package com.myExecutor;
 
 public class Producer implements Runnable{
     

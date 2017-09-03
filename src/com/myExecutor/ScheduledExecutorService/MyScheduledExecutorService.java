@@ -1,4 +1,4 @@
-package myExecutor.ScheduledExecutorService;
+package com.myExecutor.ScheduledExecutorService;
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
