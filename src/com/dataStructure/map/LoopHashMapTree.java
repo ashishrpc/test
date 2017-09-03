@@ -1,4 +1,4 @@
-package com.dataStructure;
+package com.dataStructure.map;
 
 import java.util.ArrayList;
 import java.util.Arrays;
