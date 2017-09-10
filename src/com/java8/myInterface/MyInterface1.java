@@ -2,6 +2,7 @@ package com.java8.myInterface;
 /*
  * Java 8 introduces “Default Method” or (Defender methods)
  * ‘List’ or ‘Collection’ interfaces do not have ‘forEach’ method declaration. Java 8 introduces default method so that List/Collection interface can have a default implementation of forEach method.
+ * An interface can also have static helper methods from Java 8 onwards
  */
 interface MyInterface {
 	default public void fun(){
