@@ -1,6 +1,7 @@
 package com.dataStructure.queue;
 
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
@@ -27,6 +28,17 @@ public class MyPriorityQueue {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		
+		/*String st1="ashish";
+		String st2=new String("ashish");
+		System.out.println("st1:"+st1.hashCode()+" ;;st2:"+st2.hashCode());
+		System.out.println(st1==st2);
+		System.out.println(st1.equals(st2));
+		HashMap<String,String> hm=new HashMap();
+		hm.put(st1, st1);//hm.size() will be 1
+		hm.put(st2, st2);*/
+		if(true) return ;
+		
 		Queue<String> queue=new PriorityQueue<String>(3);
 		queue.add("ZBC1");
 		queue.add("ABC2");
@@ -49,7 +61,14 @@ public class MyPriorityQueue {
 		@Override
 		public int compare(Student st1, Student st2){
 			return st1.getId()-st2.getId();
-		}
+		}	
+		
+		/*Implementing the equals() method on a Comparator allows you to indicate that one comparator provides the same ordering as another comparator. It has nothing to do with how your elements are sorted. It is a very advanced and extremely rarely needed functionality. 
+		 *
+		@Override
+		public boolean equals(Object o){
+			return true;
+		}*/
 	};  
 	
 }
