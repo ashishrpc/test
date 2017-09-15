@@ -2,7 +2,7 @@ package com.serializeDemo;
 
 import java.io.Serializable;
 
-public class NoneSerializable {
+public class NoneSerializable implements Serializable{
 	private String data;
 	transient private String data2;
 	public String getData() {
