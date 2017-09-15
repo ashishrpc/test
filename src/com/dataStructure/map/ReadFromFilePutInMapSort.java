@@ -16,10 +16,11 @@ import java.util.TreeMap;
  * good example
  */
 public class ReadFromFilePutInMapSort {
-
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		try{
+			
 		File file= new File("G:\\arpc\\readMe.txt");
 		FileInputStream fis= new FileInputStream(file);
 		int content=0;
