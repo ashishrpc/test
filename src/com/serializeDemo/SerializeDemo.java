@@ -17,12 +17,14 @@ public class SerializeDemo {
 		emp.setAddress("Vaishali");
 		emp.setSsn(555);
 		emp.setNumber(55);
+		emp.setId("MyID");
 		obj.setData("Data");
 		obj.setData2("Data2");
-		emp.setObj(obj);
+		
+		emp.setObj(obj);/// if obj is not implemented serializable interface::: java.io.NotSerializableException: com.serializeDemo.NoneSerializable
 		System.out.println(emp);
 		try{
-			FileOutputStream fileOutputStream=new FileOutputStream("F:\\myEmplyee.txt");
+			FileOutputStream fileOutputStream=new FileOutputStream("H:\\myEmplyee.txt");
 			ObjectOutputStream objectOutputStream=new ObjectOutputStream(fileOutputStream);
 			objectOutputStream.writeObject(emp);
 			objectOutputStream.close();

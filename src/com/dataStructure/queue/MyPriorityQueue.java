@@ -14,7 +14,6 @@ import java.util.Queue;
 > A priority queue relying on natural ordering also does not permit insertion of non-comparable objects.
 > default initial capacity (11) and use default natural ordering if comparator not provided
 > Priority Queue size is unbounded but we can specify the initial capacity at the time of it’s creation. When we add elements to the priority queue, it’s capacity grows automatically.
-> PriorityQueue doesn’t allow null
 > PriorityQueue is not thread safe, so java provides PriorityBlockingQueue class for multithreading
 > O(log(n)) time for enqueing and dequeing method
 > Methods:

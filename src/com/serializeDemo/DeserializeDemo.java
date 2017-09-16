@@ -12,7 +12,7 @@ class DeserializeDemo {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		try{
-			FileInputStream fileInputStream=new FileInputStream("F:\\myEmplyee.txt");
+			FileInputStream fileInputStream=new FileInputStream("H:\\myEmplyee.txt");
 			ObjectInputStream objectInputStream=new ObjectInputStream(fileInputStream);
 			Employee emp=(Employee) objectInputStream.readObject();
 			objectInputStream.close();
