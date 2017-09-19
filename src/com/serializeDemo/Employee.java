@@ -1,5 +1,7 @@
 package com.serializeDemo;
 
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.Serializable;
 /*
  * 
@@ -21,6 +23,10 @@ public class Employee  extends person implements Serializable{
 	private int number;
 	private NoneSerializable obj=new NoneSerializable();
 	
+	
+	/*private Object readResolve()  {//readResolve is used for replacing the object read from the stream. The only use I've ever seen for this is enforcing singletons; when an object is read, replace it with the singleton instance. This ensures that nobody can create another instance by serializing (or Externalizable) and deserializing the singleton.
+	    return obj;
+	}*/
 	public NoneSerializable getObj() {
 		return obj;
 	}
