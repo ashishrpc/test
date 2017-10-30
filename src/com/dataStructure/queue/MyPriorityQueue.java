@@ -36,6 +36,8 @@ public class MyPriorityQueue {
 		HashMap<String,String> hm=new HashMap();
 		hm.put(st1, st1);//hm.size() will be 1
 		hm.put(st2, st2);*/
+		Student student=new Student();
+		System.out.println("object.hashCode(): "+student.hashCode());
 		if(true) return ;
 		
 		Queue<String> queue=new PriorityQueue<String>(3);
