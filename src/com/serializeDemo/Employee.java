@@ -1,5 +1,7 @@
 package com.serializeDemo;
 
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.Serializable;
 /*
  * 
@@ -8,15 +10,23 @@ import java.io.Serializable;
 
     All of the fields in the class must be serializable. If a field is not serializable, it must be marked transient.
 	all super class should be implements Serializable if you want to serialize that class
+	
+	VVI: How serialization happens? JVM first checks for the Externalizable interface and if object supports Externalizable interface, then serializes the object using writeExternal method. If the object does not support Externalizable but implement Serializable, then the object is saved using ObjectOutputStream. Now when an Externalizable object is reconstructed, an instance is created first using the public no-arg constructor, then the readExternal method is called. Again if the object does not support Externalizable, then Serializable objects are restored by reading them from an ObjectInputStream.
  */
 public class Employee  extends person implements Serializable{
 
+	public static final long serialVersionUID = 43084L;//It’s strongly recommended that all serializable classes define the serialVersionUID constant as declared in the class
+														//This helps the de-serialization process keeps re-constructing the objects correctly when the serializable classes get changed overtime, and avoid the InvalidClassException.
 	private String name;
 	private String address;
 	private transient int ssn;
 	private int number;
 	private NoneSerializable obj=new NoneSerializable();
 	
+	
+	/*private Object readResolve()  {//readResolve is used for replacing the object read from the stream. The only use I've ever seen for this is enforcing singletons; when an object is read, replace it with the singleton instance. This ensures that nobody can create another instance by serializing (or Externalizable) and deserializing the singleton.
+	    return obj;
+	}*/
 	public NoneSerializable getObj() {
 		return obj;
 	}

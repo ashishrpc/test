@@ -19,6 +19,7 @@ import java.util.Map;
  *
  *In single line description, Interface with only abstract method are referred as Functional Interface. However, 
  *A functional interface can have more than one static or default methods, and also can Override some methods from java.lang.Object
+ *Compile time error: The target type of this expression must be a functional interface (if use :: on any method then show this error)
  */
 @FunctionalInterface
 interface LambdaInterface{

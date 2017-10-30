@@ -8,6 +8,10 @@ package com.java8;
 2. Reference to a constructor													ClassName::new							ClassName::new
 3. Reference to an instance method of an arbitrary object of a particular type	ContainingType::methodName				Class::instanceMethodName
 4. Reference to an instance method of a particular object						containingObject::instanceMethodName	object::instanceMethodName
+ Note: Compile time error: The target type of this expression must be a functional interface (if use :: on any method then show this error)
+ 
+ Note: Method reference using :: is a convenience operator. Method reference is one of the features belonging to Java lambda expressions. 
+ Method reference can be expressed using the usual lambda expression syntax format using –> In order to make it more simple :: operator can be used.
  */
 interface Messageable{
 	public void say();
