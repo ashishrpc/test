@@ -3,6 +3,7 @@ package com.designPattern.behavioral;
 import java.util.Scanner;
 
 /* https://www.journaldev.com/1617/chain-of-responsibility-design-pattern-in-java
+ * 
  * >Chain of responsibility design pattern is one of the behavioral design pattern.
  * >Chain of responsibility pattern is used to achieve loose coupling in software design where a request from client is 
  * passed to a chain of objects to process them. Then the object in the chain will decide themselves who will be processing 
