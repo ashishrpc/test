@@ -3,8 +3,8 @@ package com.test;
 
 import java.util.HashMap;
 import java.util.Hashtable;
+import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 class Foo {
 	private  int i = 3;
@@ -43,4 +43,11 @@ class A {public A(){}
 class B {public B(){}
 	A a;
 }
-class C {public C(){}}
+class C {
+	Integer i;
+	
+	public C(){}
+	
+	public void fun(List<Integer> li){}
+	//public void fun(List<String> li){} //compile error:Erasure of method fun(List<String>) is the same as another method in type C
+}
