@@ -45,9 +45,9 @@ class B {public B(){}
 }
 class C {
 Integer i;
-	
 	public C(){}
 	
 	public void fun(List<Integer> li){}
 	//public void fun(List<String> li){} //compile error:Erasure of method fun(List<String>) is the same as another method in type C
+	//local test
 }
