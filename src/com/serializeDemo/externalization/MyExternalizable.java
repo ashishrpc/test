@@ -23,7 +23,11 @@ import java.io.ObjectOutputStream;
 	readExternal(ObjectInput in): The object implements this method to restore its contents by calling the methods of DataInput for 
 	primitive types and readObject for objects, strings and arrays.
 	
-	VVI:How serialization happens? JVM first checks for the Externalizable interface and if object supports Externalizable interface, then serializes the object using writeExternal method. If the object does not support Externalizable but implement Serializable, then the object is saved using ObjectOutputStream. Now when an Externalizable object is reconstructed, an instance is created first using the public no-arg constructor, then the readExternal method is called. Again if the object does not support Externalizable, then Serializable objects are restored by reading them from an ObjectInputStream.
+	VVI:How serialization happens? JVM first checks for the Externalizable interface and if object supports Externalizable interface, 
+	then serializes the object using writeExternal method. If the object does not support Externalizable but implement Serializable, 
+	then the object is saved using ObjectOutputStream. Now when an Externalizable object is reconstructed, 
+	an instance is created first using the public no-arg constructor, then the readExternal method is called. 
+	Again if the object does not support Externalizable, then Serializable objects are restored by reading them from an ObjectInputStream.
 	
 	Q. What will happen when an externalizable class extends a non externalizable super class?
 	A. Then in this case, you need to persist the super class fields also in the sub class that implements Externalizable interface. 
