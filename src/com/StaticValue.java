@@ -15,7 +15,13 @@ import java.lang.reflect.*;
             Field fld = cls.getField("i");
             System.out.println("value : "+fld.get(fld.getName()));
             System.out.println("value : "+fld.get("i"));
-            
+            B b=null;
+            b.funStatic();
+            for(int i=0;i<100000000;i++){
+            	StaticValue sv=new StaticValue();
+            	Thread.sleep(500);
+            }
+            System.out.println("Done.....");
             /*for (int i  = 0; i < fieldlist.length; i++) {
                Field fld = fieldlist[i];
                System.out.println("name = " + fld.getName());
@@ -54,5 +60,12 @@ import java.lang.reflect.*;
 	   @Override
 	   public StaticBlock  fun()throws FileNotFoundException{
 		   return null;
+	   }
+	   public static void funStatic(){
+		   System.out.println("funStatic()");
+		   /*
+		    *B b=null;
+            b.funStatic(); //working fine....//static method is bound at compile time and only type of variable is used for static binding not the value of object.
+		    */
 	   }
    }
