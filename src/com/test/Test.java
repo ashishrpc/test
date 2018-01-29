@@ -51,5 +51,4 @@ Integer i;
 	//public void fun(List<String> li){} //compile error:Erasure of method fun(List<String>) is the same as another method in type C
 	//local test
 	//index.....
-	//commit from office
 }
