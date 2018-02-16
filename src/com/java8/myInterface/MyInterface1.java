@@ -8,7 +8,7 @@ interface MyInterface {
 	default public void fun(){
 		System.out.println("MyInterface->fun()");
 	}
-	//public String getFun();// multiple function declared then show error:The target type of this expression must be a functional interface
+	//public String getFun();// In case of use lambda expression, multiple function declared then show error:The target type of this expression must be a functional interface
 	
 	static void staticFun(){
 		System.out.println("MyInterface->staticFun()");
