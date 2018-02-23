@@ -66,15 +66,17 @@ class Employee implements Comparable{
         Employee emp=(Employee)o;
         return name.compareTo(emp.getName());
     }
-    /*
-    @Override
+    
+    /* Can't implement Comparator
+     * error: java.lang.ClassCastException: com.Employee cannot be cast to java.lang.Comparable
+    @Override 
     public int compare(Object object1, Object object2) {
         // TODO Auto-generated method stub
         Employee emp1=(Employee)object1;
         Employee emp2=(Employee)object2;
         return emp1.getName().compareTo(emp2.getName());
-    } 
-     */
+    } */
+     
 }
  
 public class MyTest  {//extends MyAbs implements MyInterface{ 
@@ -84,7 +86,7 @@ public class MyTest  {//extends MyAbs implements MyInterface{
 	    Integer c = 100;  //-128 to 127
 	    Integer d = 100;
 	    System.out.println(c == d );*/
-	    /*TreeMap<Employee, Employee>  obj1= new TreeMap<Employee, Employee>();
+	    TreeMap<Employee, Employee>  obj1= new TreeMap<Employee, Employee>();
 	    
 	    try{
 	    Employee e1=new Employee("a");
@@ -102,7 +104,7 @@ public class MyTest  {//extends MyAbs implements MyInterface{
 	        System.out.println("error: "+e);
 	    }
 	    System.out.println("success..."+obj1.toString());
-	    */
+	    
 	    /*Employee emp=new Employee();
 	    emp.setName("Ram");
 	    Student student=new Student("Ashish", emp);
