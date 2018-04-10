@@ -3,21 +3,45 @@ class Common {
     public synchronized void synchronizedMethod1() {
         System.out.println("synchronizedMethod1 called");
         try {
-            Thread.sleep(2000);
+            Thread.sleep(3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
         System.out.println("synchronizedMethod1 done");
     }
 
-    public synchronized void synchronizedMethod2() {
+    public static synchronized void synchronizedMethod2() {
         System.out.println("synchronizedMethod2 called");
         try {
-            Thread.sleep(1000);
+            Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
         System.out.println("synchronizedMethod2 done");
+    }
+    
+    public void synchronizedMethod11() {
+    	synchronized(this){
+    		System.out.println("synchronizedMethod1 called");
+    		try {
+    			Thread.sleep(3000);
+    		} catch (InterruptedException e) {
+    			e.printStackTrace();
+    		}
+    		System.out.println("synchronizedMethod1 done");
+    	}
+    }
+
+    public void synchronizedMethod22() {
+    	synchronized(Common.class){
+    		System.out.println("synchronizedMethod2 called");
+    		try {
+    			Thread.sleep(2000);
+    		} catch (InterruptedException e) {
+    			e.printStackTrace();
+    		}
+    		System.out.println("synchronizedMethod2 done");
+    	}
     }
 }
 public class MyThread extends Thread {
@@ -35,9 +59,9 @@ public class MyThread extends Thread {
         try {
             if (id == 0) {
                 common.synchronizedMethod1();
-                common.synchronizedMethod2();
+                //common.synchronizedMethod22();
             } else {
-                //common.synchronizedMethod2();
+                Common.synchronizedMethod2();
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -47,8 +71,8 @@ public class MyThread extends Thread {
     public static void main(String[] args) {
         Common c = new Common();
         MyThread t1 = new MyThread("MyThread-1", 0, c);
-        //MyThread t2 = new MyThread("MyThread-2", 1, c);
+        MyThread t2 = new MyThread("MyThread-2", 1, c);
         t1.start();
-        //t2.start();
+        t2.start();
     }
 }
