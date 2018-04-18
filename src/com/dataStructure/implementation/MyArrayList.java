@@ -59,7 +59,6 @@ public class MyArrayList<E> {
 		this.index--;
 	}
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		MyArrayList<Integer> list = new MyArrayList<Integer>(2);
         list.add(1);
         list.add(2);
